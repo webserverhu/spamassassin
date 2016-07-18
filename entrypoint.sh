@@ -43,4 +43,8 @@ bayes_sql_override_username bayes
 skip_rbl_checks 1
 EOT
 
-exec /usr/sbin/spamd --ipv4 --allowed-ips=$ALLOWED_IP_RANGES --listen-ip --min-children=10 --min-spare=3 --max-spare=7 --max-children=20 --nouser-config --helper-home-dir --syslog-socket=none
+exec /usr/sbin/spamd \
+--ipv4 --allowed-ips=$ALLOWED_IP_RANGES --listen-ip \
+--min-children=$MIN_CHILDREN --max-children=$MAX_CHILDREN \
+--min-spare=$MIN_SPARE --max-spare=$MAX_SPARE \
+--nouser-config --helper-home-dir --syslog-socket=none
