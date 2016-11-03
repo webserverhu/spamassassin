@@ -14,6 +14,8 @@ ENV BAYES_ADDRESS=BayesDatabase \
     MIN_SPARE=1 \
     MAX_SPARE=2
 
+RUN mkdir -p /nonexistent/.pyzor/ && chown -R nobody:nogroup /nonexistent
+
 COPY [ "entrypoint.sh", "/" ]
 
 EXPOSE 783
