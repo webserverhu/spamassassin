@@ -27,6 +27,11 @@ cat <<EOT > /etc/spamassassin/local.cf
 
 required_score 10.0
 
+use_pyzor 1
+
+pyzor_path /usr/bin/pyzor
+pyzor_timeout 10
+
 use_bayes 1
 
 bayes_auto_learn 1
